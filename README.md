@@ -1,18 +1,20 @@
-# clean-code-javascript
+# សរសេរកូដស្អាតភាសាចាវ៉ាស្ក្រីប (clean-code-javascript)
 
-## Table of Contents
-  1. [Introduction](#introduction)
-  2. [Variables](#variables)
-  3. [Functions](#functions)
-  4. [Objects and Data Structures](#objects-and-data-structures)
-  5. [Classes](#classes)
+ច្បាប់ដើមពី https://github.com/ryanmcdermott/clean-code-javascript
+
+## មាតិការ
+  1. [សេចក្ដីផ្ដើម (Introduction)](#introduction)
+  2. [អថេរ (Variables)](#variables)
+  3. [អនុគមន៍ (Functions)](#functions)
+  4. [អប់ជែកត៍ និង រចនាសម្ព័ន្ធទិន្នន័យ (Objects and Data Structures)](#objects-and-data-structures)
+  5. [ក្លាស្ស (Classes)](#classes)
   6. [SOLID](#solid)
-  7. [Testing](#testing)
-  8. [Concurrency](#concurrency)
-  9. [Error Handling](#error-handling)
-  10. [Formatting](#formatting)
-  11. [Comments](#comments)
-  12. [Translation](#translation)
+  7. [ថេស្ទីង (Testing)](#testing)
+  8. [ដំណើរការដំណាលគ្នា (Concurrency)](#concurrency)
+  9. [ដោះស្រាយអ៊ែរឺ (Error Handling)](#error-handling)
+  10. [ទ្រង់ទ្រាយកូដ (Formatting)](#formatting)
+  11. [វាចារ (Comments)](#comments)
+  12. [បកប្រែ (Translation)](#translation)
 
 ## Introduction
 ![Humorous image of software quality estimation as a count of how many expletives

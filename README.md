@@ -3,9 +3,9 @@
 ច្បាប់ដើមពី https://github.com/ryanmcdermott/clean-code-javascript
 
 ## មាតិការ
-  1. [សេចក្ដីផ្ដើម (Introduction)](#introduction)
-  2. [អថេរ (Variables)](#variables)
-  3. [អនុគមន៍ (Functions)](#functions)
+  1. [សេចក្ដីផ្ដើម](#សេចក្ដីផ្ដើម)
+  2. [អថេរ (Variables)](#អថេរ)
+  3. [អនុគមន៍ (Functions)](#អនុគមន៍)
   4. [អប់ជែកត៍ និង រចនាសម្ព័ន្ធទិន្នន័យ (Objects and Data Structures)](#objects-and-data-structures)
   5. [ក្លាស្ស (Classes)](#classes)
   6. [SOLID](#solid)
@@ -16,34 +16,21 @@
   11. [វាចារ (Comments)](#comments)
   12. [បកប្រែ (Translation)](#translation)
 
-## Introduction
-![Humorous image of software quality estimation as a count of how many expletives
-you shout when reading code](http://www.osnews.com/images/comics/wtfm.jpg)
+## សេចក្ដីផ្ដើម
+![វិធីប៉ានស្មានពីគុណភាព Software ដ៏គួរឲ្យអស់សំណើចដោយរាប់ចំនូន What de fuck ពេលអានកូដ](http://www.osnews.com/images/comics/wtfm.jpg)
 
-Software engineering principles, from Robert C. Martin's book
-[*Clean Code*](https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882),
-adapted for JavaScript. This is not a style guide. It's a guide to producing
-[readable, reusable, and refactorable](https://github.com/ryanmcdermott/3rs-of-software-architecture) software in JavaScript.
+**Software engineering principles**, មកពីសៀវភៅរបស់ Robert C. Martin ចំណងជើង
+[*Clean Code*](https://www.amazon.com/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882)
+សម្រួចសម្រួលសម្រាប់ភាសា JavaScript។ នេះមិនមែនជាការណែនាំពីស្តាយ៍សរសេកូដនោះទេ។ តែជាការណែនាំពីរបៀបសរសេរកូដដែល[អានបាន ប្រើឡើងវិញបាន ហើយនឹងរីហ្វេកទ័របាន](https://github.com/ryanmcdermott/3rs-of-software-architecture) ក្នុងភាសា JavaScript។
 
-Not every principle herein has to be strictly followed, and even fewer will be
-universally agreed upon. These are guidelines and nothing more, but they are
-ones codified over many years of collective experience by the authors of
-*Clean Code*.
+អ្នកមិនចាំបាច់ថាត្រូវតែធ្វើតាមគោលការណ៍នៅក្នុងនេះទាំងអស់ទេ ដោយថាទាំងនេះមិនមែនជាស្តង់ដារទេ តែគ្រាន់តែជាការណែនាំពីរបៀបសរសេរកូដដែលផ្អែកលើបទពីសោធន៍រាប់ឆ្នាំរបស់អ្នកនិពន្ធសៀវភៅ *Clean Code* តែប៉ុណ្ណោះ។
 
-Our craft of software engineering is just a bit over 50 years old, and we are
-still learning a lot. When software architecture is as old as architecture
-itself, maybe then we will have harder rules to follow. For now, let these
-guidelines serve as a touchstone by which to assess the quality of the
-JavaScript code that you and your team produce.
+ជំនាញវិស្វកម្មសហ្វវែរ៍ទើបតែមានមកប្រហែល ៥០ ឆ្នាំប៉ុណ្ណោះ ហើយយើងត្រូវរៀនសូត្រច្រើនទៀត។ នៅពេលដែល Software Architecture មានវ័យចំណាស់ប្រហែលនឹង Architecture ហើយ យើងប្រហែលជានឹងមានច្បាប់ពីបាកៗជាងនេះដែលត្រូវធ្វើតាម។ សម្រាប់ពេលនេះ សូមប្រើសេចក្ដីណែនាំទាំងនេះដើម្បីតែផ្ទៀងផ្ទាត់ពីគុណភាពកូដ
+JavaScript ដែលអ្នក និងក្រុមរបស់អ្នកសរសេរទៅបានហើយ។
 
-One more thing: knowing these won't immediately make you a better software
-developer, and working with them for many years doesn't mean you won't make
-mistakes. Every piece of code starts as a first draft, like wet clay getting
-shaped into its final form. Finally, we chisel away the imperfections when
-we review it with our peers. Don't beat yourself up for first drafts that need
-improvement. Beat up the code instead!
+មានរឿងមួយទៀត! ដឹងពីការណែនាំក្នុងការសរសេរកូដនេះនឹងមិនធ្វើឲ្យអ្នកក្លាយជាឌីវែលឡបពើល្អជាងមុនភ្លាមៗទេ ហើយយកវាមកប្រើរាប់ឆ្នាំក៏មិនមានន័យថាអ្នកនឹងមិនធ្វើខុសនោះទេ។ គ្រប់កូដទាំងអស់ចាប់ផ្ដើមពីកូដព្រាង ដូចដែលដីឥដ្ឋត្រូវសូនឲ្យក្លាយជាផលិតផលសម្រេចចឹងដែរ។ ចុងបញ្វប់ទៅយើងនឹងបោះចោលចំណុចដែលមិនល្អនៅពេលដែលយើងត្រួតពិនិត្យឡើងវិញជាមួយដែលគូររបស់យើង។ មិនចាំបាច់ធ្វើបាបខ្លួនឯងទេសម្រាប់កូដព្រាងដែលអ្នកសរសេរ។ ចាត់ការកូដវីញទៅល្អជាង! 
 
-## **Variables**
+## **អថេរ**
 ### Use meaningful and pronounceable variable names
 
 **Bad:**
@@ -201,7 +188,7 @@ function createMicrobrewery(name = 'Hipster Brew Co.') {
 ```
 **[⬆ back to top](#table-of-contents)**
 
-## **Functions**
+## **អនុគមន៍**
 ### Function arguments (2 or fewer ideally)
 Limiting the amount of function parameters is incredibly important because it
 makes testing your function easier. Having more than three leads to a
